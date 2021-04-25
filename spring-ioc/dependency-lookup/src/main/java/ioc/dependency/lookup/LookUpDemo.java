@@ -1,16 +1,13 @@
 package ioc.dependency.lookup;
 
 import ioc.dependency.annotation.Super;
-import ioc.dependency.demain.SuperUser;
-import ioc.dependency.demain.User;
+import ioc.dependency.domain.User;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.ListableBeanFactory;
 import org.springframework.beans.factory.ObjectFactory;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.Map;
-import java.util.stream.Stream;
 
 /**
  * description: LookUpDemo 依赖查找案例

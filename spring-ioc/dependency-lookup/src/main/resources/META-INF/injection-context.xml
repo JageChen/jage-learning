@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="user" class="ioc.dependency.demain.User">
+    <bean id="user" class="ioc.dependency.domain.User">
         <property name="userName" value="jage" ></property>
         <property name="age" value="100" ></property>
     </bean>

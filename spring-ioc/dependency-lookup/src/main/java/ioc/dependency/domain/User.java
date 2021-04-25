@@ -1,4 +1,4 @@
-package ioc.dependency.demain;
+package ioc.dependency.domain;
 
 /**
  * description: User

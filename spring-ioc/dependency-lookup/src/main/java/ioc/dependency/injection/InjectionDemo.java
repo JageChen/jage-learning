@@ -1,12 +1,7 @@
 package ioc.dependency.injection;
 
-import ioc.dependency.demain.User;
 import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.ListableBeanFactory;
-import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import java.util.Map;
 
 /**
  * description: LookUpDemo 依赖注入案例
