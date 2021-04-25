@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!-- 导入复用配置 -->
+   <import resource="lookup-context.xml"></import>
+    <bean name="userRepository" class="ioc.dependency.domain.repository.UserRepository">
+        <property name="users" ref="user"></property>
+    </bean>
+
+    <bean name="userRepositoryByUtil" class="ioc.dependency.domain.repository.UserRepository"
+        autowire="byType"> <!-- 自动注入 -->
+        <!-- 手动注入（这种方式既是集合的实现也是单个注入的实现方式）,这种方式也存在缺点,如果说user有很多beans的继承那么就需要每次都手动增加配置. -->
+<!--        <property name="users">-->
+<!--            <util:list>-->
+<!--                &lt;!&ndash; 单个实现只需要依赖一个具体bean即可 &ndash;&gt;-->
+<!--                <ref bean="user" />-->
+<!--                <ref bean="superUser"/>-->
+<!--            </util:list>-->
+<!--        </property>-->
+    </bean>
+</beans>
