@@ -9,6 +9,10 @@
         <property name="age" value="100" ></property>
     </bean>
 
+    <bean id="superUser" class="ioc.dependency.demain.SuperUser" primary="true">
+        <property name="address" value="深圳"></property>
+    </bean>
+
     <bean id="objFactory" class="org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean">
         <property name="targetBeanName" value="user" ></property>
     </bean>
