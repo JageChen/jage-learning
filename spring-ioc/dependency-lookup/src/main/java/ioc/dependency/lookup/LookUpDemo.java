@@ -1,5 +1,7 @@
 package ioc.dependency.lookup;
 
+import ioc.dependency.annotation.Super;
+import ioc.dependency.demain.SuperUser;
 import ioc.dependency.demain.User;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.ListableBeanFactory;
@@ -31,7 +33,22 @@ public class LookUpDemo {
         lookupMapByType(beanFactory);
         //根据类型+名称查找
         lookupByNameOrType(beanFactory);
+        //根据注解查找
+        lookupByannotation(beanFactory);
     }
+
+    /**
+     * 注解查找单个依赖
+    **/
+    private static void lookupByannotation(BeanFactory beanFactory) {
+        if (beanFactory instanceof ListableBeanFactory){
+            ListableBeanFactory listableBeanFactory = (ListableBeanFactory) beanFactory;
+            //bean的名称作为keys 相关实例作为values
+            Map<String, User> users =(Map) listableBeanFactory.getBeansWithAnnotation(Super.class);
+            System.out.println(users);
+        }
+    }
+
 
     /**
      * 根据bean 类型，名称来查找依赖。简单不多阐述
